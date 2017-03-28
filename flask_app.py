@@ -34,7 +34,7 @@ def hello_world():
 @app.route('/ajax', methods=['GET'])
 def changeConent():
     print('this was accessed')
-    return 'this is a test in python'
+    return 'BITCH'
 
 
 @app.route('/')
