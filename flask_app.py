@@ -34,7 +34,7 @@ def hello_world():
 @app.route('/ajax', methods=['GET'])
 def changeConent():
     print('this was accessed')
-    return 'BITCH'
+    return 'This is Ajax Request Respose from the Server. Sent without reloading the page'
 
 
 @app.route('/')
