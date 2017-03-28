@@ -29,6 +29,13 @@ def hello_world():
     # was GET or the credentials were invalid
     return render_template('return.html', name=name, age=age, error=error)
 
+
+@app.route('/ajax', methods=['GET'])
+def changeConent():
+    print('this was accessed')
+    return 'this is a test in python'
+
+
 @app.route('/')
 def hello(name=None):
     return render_template('index.html',name = name)
