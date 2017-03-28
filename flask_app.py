@@ -5,6 +5,7 @@ Put your Flask app code here.
 from flask import Flask
 from flask import render_template
 from flask import request
+import os
 app = Flask(__name__)
 
 
@@ -43,4 +44,6 @@ def hello(name=None):
 
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    HOST = '0.0.0.0' if 'PORT' in os.environ else '127.0.0.1'
+    PORT = int(os.environ.get('PORT', 5000))
+    app.run(host=HOST, port=PORT)
