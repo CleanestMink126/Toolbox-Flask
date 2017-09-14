@@ -72,7 +72,7 @@ def testReturn():
     second = "#00FF00"
     myWord = "myWord"
     last = ";color:#FFFFFF'>" + myWord + " </span>"
-    first = "<span style='background-color: " + second + last
+    first = "<span style='color: " + second + last
     return first
 
 @app.route('/getLength',methods=['POST'])
@@ -105,8 +105,9 @@ def getNextWord():
                 color = mydb.getColor(title,index)
                 if(color != 'NA'):
                     textcolor = ";color:#000000'>"
+                textcolor = "'>"
                 last = textcolor + mainWord + " </span>"
-                first = "<span style='background-color: " + color + last
+                first = "<span style='color: " + color + last
                 if(mainWord == 'NEWLINE'):
                     first = '<br>'
                 elif(mainWord == 'BREAKBREAK'):
@@ -138,8 +139,9 @@ def getNextWord():
             color = mydb.getColor(title,index)
             if(color != 'NA'):
                 textcolor = ";color:#000000'>"
+            textcolor = "'>"
             last =  textcolor + mainWord + " </span>"
-            first = "<span style='background-color: " + color + last
+            first = "<span style='color: " + color + last
             if(mainWord == 'NEWLINE'):
                 first = '<br>'
             elif(mainWord == 'BREAKBREAK'):
@@ -177,8 +179,9 @@ def getAllWords():
                     color = myWords[i][2]
                     if(color != 'NA'):
                         textcolor = ";color:#000000'>"
+                    textcolor = "'>"
                     last = textcolor + mainWord + " </span>"
-                    nextElement = "<span style='background-color: " + color + last
+                    nextElement = "<span style='color: " + color + last
                     if(mainWord == 'NEWLINE'):
                         nextElement = '<br>'
                     elif(mainWord == 'BREAKBREAK'):
@@ -217,6 +220,7 @@ def getAllWords():
                     color = myWords[i][2]
                     if(color != 'NA'):
                         textcolor = ";color:#000000'>"
+                    textcolor = "'>"
                     last = textcolor + mainWord + " </span>"
                     nextElement = "<span style='background-color: " + color + last
                     if(mainWord == 'NEWLINE'):

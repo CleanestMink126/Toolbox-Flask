@@ -119,7 +119,7 @@ def rhyme_finder(url):
         myDiv = div.h1.get_text()
     myDiv = re.sub('[^0-9a-zA-Z]+', '', myDiv)
     # print(myDiv)
-    return ("Total Rhyme Rate: " + str(100 * totR/totW)), body
+    return ("Total Rhyme Rate: " + str(round(100 * totR/totW,1))), body
     #str(html.find('p'))  # the first paragraph, as a string. Includes embedded <b> etc.
 
 def drawOutWords(url):
